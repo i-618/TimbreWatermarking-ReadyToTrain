@@ -55,7 +55,7 @@ from pathlib import Path
 from sklearn.metrics.pairwise import cosine_similarity
 import torchaudio
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-resamber_encoder = VoiceEncoder(device="cuda")
+resamber_encoder = VoiceEncoder(device='cuda' if torch.cuda.is_available() else 'cpu')
 pesq_resampler = torchaudio.transforms.Resample(22050, 16000).to(device)
 
 

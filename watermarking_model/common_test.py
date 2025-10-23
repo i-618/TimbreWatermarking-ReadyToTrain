@@ -157,11 +157,26 @@ def main(args, configs):
         model_list = sorted(model_list,key=lambda x:os.path.getmtime(os.path.join(path_model,x)))
         model_path = os.path.join(path_model, model_list[index])
         model = torch.load(model_path)
+
         logging.info("model <<{}>> loadded".format(model_path))
     # encoder = model["encoder"]
     # decoder = model["decoder"]
     encoder.load_state_dict(model["encoder"])
     decoder.load_state_dict(model["decoder"], strict=False)
+    total_params = sum(p.numel() for p in encoder.parameters())
+    logging.info(f"\nTotal number of encoder parameters: {total_params}")
+
+    trainable_params = sum(p.numel() for p in encoder.parameters() if p.requires_grad)
+    logging.info(f"Total number of encoder trainable parameters: {trainable_params}")
+
+    total_params = sum(p.numel() for p in decoder.parameters())
+    logging.info(f"\nTotal number of decoder parameters: {total_params}")
+
+    trainable_params = sum(p.numel() for p in decoder.parameters() if p.requires_grad)
+    logging.info(f"Total number of decoder trainable parameters: {trainable_params}")
+
+
+
     encoder.eval()
     decoder.eval()
     # ---------------- Loss

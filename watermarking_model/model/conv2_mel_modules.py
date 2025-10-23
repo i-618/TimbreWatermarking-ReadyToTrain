@@ -73,7 +73,7 @@ def get_vocoder(device):
         config = json.load(f)
     config = hifigan.AttrDict(config)
     vocoder = hifigan.Generator(config)
-    ckpt = torch.load("./hifigan/model/VCTK_V1/generator_v1")
+    ckpt = torch.load("./hifigan/model/VCTK_V1/generator_v1", map_location=torch.device('cuda' if torch.cuda.is_available() else 'cpu'))    
     vocoder.load_state_dict(ckpt["generator"])
     vocoder.eval()
     vocoder.remove_weight_norm()
