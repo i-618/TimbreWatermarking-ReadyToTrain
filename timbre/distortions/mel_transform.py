@@ -4,7 +4,7 @@ import numpy as np
 from torch.autograd import Variable
 from scipy.signal import get_window
 from librosa.util import pad_center, tiny
-from distortions.frequency import window_sumsquare
+from timbre.distortions.frequency import window_sumsquare
 
 
 class STFT(torch.nn.Module):

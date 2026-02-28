@@ -7,7 +7,7 @@ import warnings
 import numpy as np
 from rich.progress import track
 from torch.utils.data import DataLoader
-from model.loss import Loss
+from timbre.model.loss import Loss
 from torch.nn.functional import mse_loss
 import soundfile
 import random

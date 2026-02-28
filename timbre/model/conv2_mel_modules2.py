@@ -3,8 +3,8 @@ import torch
 import torch.nn as nn
 from torch.nn import LeakyReLU, Tanh
 from .blocks import FCBlock, PositionalEncoding, Mish, Conv1DBlock, Conv2Encoder, WatermarkEmbedder, WatermarkExtracter, ReluBlock
-from distortions.frequency import TacotronSTFT, fixed_STFT, tacotron_mel
-from distortions.dl import distortion
+from timbre.distortions.frequency import TacotronSTFT, fixed_STFT, tacotron_mel
+from timbre.distortions.dl import distortion
 import pdb
 import hifigan
 import json

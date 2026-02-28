@@ -8,7 +8,7 @@ import numpy as np
 from torch.optim import Adam
 from rich.progress import track
 from torch.utils.data import DataLoader
-from model.loss import Loss
+from timbre.model.loss import Loss
 import soundfile
 import random
 import pdb

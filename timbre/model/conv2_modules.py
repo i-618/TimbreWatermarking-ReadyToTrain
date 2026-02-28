@@ -3,8 +3,8 @@ import torch
 import torch.nn as nn
 from torch.nn import LeakyReLU, Tanh
 from .blocks import FCBlock, PositionalEncoding, Mish, Conv1DBlock, Conv2Encoder, WatermarkEmbedder, WatermarkExtracter,  ReluBlock
-from distortions.mel_transform import STFT
-from distortions.dl import distortion
+from timbre.distortions.mel_transform import STFT
+from timbre.distortions.dl import distortion
 import pdb
 
 

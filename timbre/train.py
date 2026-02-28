@@ -8,7 +8,7 @@ import numpy as np
 from torch.optim import Adam
 from rich.progress import track
 from torch.utils.data import DataLoader
-from model.loss import Loss_identity
+from timbre.model.loss import Loss_identity
 from utils.tools import save, log, save_op
 from utils.optimizer import ScheduledOptimMain, ScheduledOptimDisc, my_step
 from itertools import chain

@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from torch.nn import LeakyReLU
 from .blocks import FCBlock, PositionalEncoding, Mish, Conv1DBlock
-from distortions.mel_transform import STFT
+from timbre.distortions.mel_transform import STFT
 import pdb
 
 
