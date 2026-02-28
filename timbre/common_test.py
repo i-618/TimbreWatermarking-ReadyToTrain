@@ -200,7 +200,7 @@ def main(args, configs):
     lambda_m = train_config["optimize"]["lambda_m"]
     train_len = len(audios_loader)
     
-    from distortions.dl import distortion
+    from timbre.distortions.dl import distortion
     dl = distortion(process_config)
     experiments_dir = args.name
 
