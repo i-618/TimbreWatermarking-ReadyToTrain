@@ -16,7 +16,7 @@ from audio_processing import griffin_lim
 from text import text_to_sequence
 # from denoiser import Denoiser
 import json
-import timbre.hifigan
+import timbre.hifigan as hifigan
 from scipy.io import wavfile
 
 

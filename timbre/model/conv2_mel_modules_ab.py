@@ -6,7 +6,7 @@ from .blocks import FCBlock, PositionalEncoding, Mish, Conv1DBlock, Conv2Encoder
 from timbre.distortions.frequency import TacotronSTFT, fixed_STFT, tacotron_mel
 from timbre.distortions.dl import distortion
 import pdb
-import timbre.hifigan
+import timbre.hifigan as hifigan
 import json
 import torchaudio
 

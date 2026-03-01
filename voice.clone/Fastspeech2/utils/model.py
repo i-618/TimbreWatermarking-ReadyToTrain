@@ -4,7 +4,7 @@ import json
 import torch
 import numpy as np
 
-import timbre.hifigan
+import timbre.hifigan as hifigan
 from model import FastSpeech2, ScheduledOptim
 
 
