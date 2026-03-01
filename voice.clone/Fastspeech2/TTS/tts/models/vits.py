@@ -148,7 +148,7 @@ def spec_to_mel(spec, n_fft, num_mels, sample_rate, fmin, fmax):
     dtype_device = str(spec.dtype) + "_" + str(spec.device)
     fmax_dtype_device = str(fmax) + "_" + dtype_device
     if fmax_dtype_device not in mel_basis:
-        mel = librosa_mel_fn(sample_rate, n_fft, num_mels, fmin, fmax)
+        mel = librosa_mel_fn(sr=sample_rate, n_fft=n_fft, n_mels=num_mels, fmin=fmin, fmax=fmax)
         mel_basis[fmax_dtype_device] = torch.from_numpy(mel).to(dtype=spec.dtype, device=spec.device)
     mel = torch.matmul(mel_basis[fmax_dtype_device], spec)
     mel = amp_to_db(mel)
