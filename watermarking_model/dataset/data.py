@@ -221,6 +221,10 @@ class mel_dataset_test_2(Dataset):
 class wav_dataset(Dataset):
     def __init__(self, process_config, train_config, flag='train'):
         self.dataset_name = train_config["dataset"]
+
+        # Added as its loading whole dataset into memory
+        self.dataset_len = train_config["dataset_len"]
+
         raw_dataset_path = train_config["path"]["raw_path"]
         self.dataset_path = os.path.join(raw_dataset_path, flag)
         self.sample_rate = process_config["audio"]["sample_rate"]
@@ -229,6 +233,10 @@ class wav_dataset(Dataset):
         self.max_len = process_config["audio"]["max_len"]
         # self.wavs = self.process_meta()[:10]
         self.wavs = self.process_meta()
+
+        if self.dataset_len is not None:
+            print(f"Limiting dataset to {self.dataset_len} samples.")
+            self.wavs = self.wavs[:self.dataset_len]
         # n_fft = process_config["mel"]["n_fft"]
         # hop_length = process_config["mel"]["hop_length"]
         # self.stft = STFT(n_fft, hop_length)
