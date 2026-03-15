@@ -93,6 +93,7 @@ class mel_dataset(Dataset):
         self.wavs = self.process_meta()
 
         if self.dataset_len is not None:
+            print(f"Limiting dataset to {self.dataset_len} samples.")
             self.wavs = self.wavs[:self.dataset_len]
         
         # n_fft = process_config["mel"]["n_fft"]
