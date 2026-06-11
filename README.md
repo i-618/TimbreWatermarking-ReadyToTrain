@@ -25,16 +25,23 @@ scripts or wrangle config paths.
 
 ### Install
 
-From the repository root:
+Install directly from GitHub with pip (requires `git` to be installed):
 
 ```bash
-# (recommended) create an environment, then install the package + its deps
-pip install .
+# install the package + its dependencies straight from the repo
+pip install "git+https://github.com/i-618/TimbreWatermarking-ReadyToTrain.git"
+
+# pin to a branch or commit for reproducibility:
+pip install "git+https://github.com/i-618/TimbreWatermarking-ReadyToTrain.git@main"
 
 # PyTorch is left unpinned so you can match your CUDA/CPU setup — if you don't
 # already have it, install the right build from https://pytorch.org first, e.g.
 #   pip install torch torchaudio
 ```
+
+> **Heads up — large download (~260 MB).** The model checkpoints and HiFi-GAN
+> vocoder are committed to the repo, so the install clones them too. It works out
+> of the box, just expect it to take a while.
 
 > **numpy 1.x is required.** The compiled dependencies are built against numpy
 > 1.x and crash under numpy 2.x, so the package pins `numpy<2`. If you installed
@@ -44,8 +51,11 @@ To also run training, dataset loading, or the speech-quality / speaker-similarit
 metrics, install the extras:
 
 ```bash
-pip install ".[full]"
+pip install "timbre[full] @ git+https://github.com/i-618/TimbreWatermarking-ReadyToTrain.git"
 ```
+
+If you have cloned the repo locally instead, you can install from the repository
+root with `pip install .` (or `pip install ".[full]"`).
 
 The model checkpoints, HiFi-GAN vocoder, and YAML configs are bundled with the
 package, so inference works out of the box.
