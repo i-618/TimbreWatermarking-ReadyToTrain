@@ -1,3 +1,5 @@
+Code modified for research
+
 # :rabbit: [Detecting Voice Cloning Attacks via Timbre Watermarking](https://github.com/TimbreWatermarking/TimbreWatermarking)
 
 Source code for [paper](https://www.ndss-symposium.org/wp-content/uploads/2024-200-paper.pdf) “Detecting Voice Cloning Attacks via Timbre Watermarking” 
@@ -30,9 +32,6 @@ Install directly from GitHub with pip (requires `git` to be installed):
 ```bash
 # install the package + its dependencies straight from the repo
 pip install "git+https://github.com/i-618/TimbreWatermarking-ReadyToTrain.git"
-
-# pin to a branch or commit for reproducibility:
-pip install "git+https://github.com/i-618/TimbreWatermarking-ReadyToTrain.git@main"
 
 # PyTorch is left unpinned so you can match your CUDA/CPU setup — if you don't
 # already have it, install the right build from https://pytorch.org first, e.g.
